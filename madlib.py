@@ -25,6 +25,6 @@ madlib += plural_noun + " or drink "
 
 plural_noun = input("Please give ANOTHER plural_noun: ")
 
-madlib += plural_noun
+madlib += plural_noun + "."
 
 print(madlib)
