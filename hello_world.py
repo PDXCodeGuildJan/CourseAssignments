@@ -2,4 +2,6 @@ saying = "Hello World,"
 
 name = input("What is your name? ")
 
-print(saying, name)
+output = saying + " " + name + ". You are awesome!"
+
+print(output)
