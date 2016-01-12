@@ -47,15 +47,16 @@ def updateState(guess, currentState):
    global numWrong
 
    # First, determine if the letter guessed is in the word.
+   numInWord = listedWord.count(guess)
+
    # If it isn't, tell the user and update the numWrong var
    # If it is, congratulate them and update the state of the game.
    #    To update the state, make sure to replace ALL the '_' with
    #    the guessed letter.
-   numInWord = listedWord.count(guess)
+   
 
    return currentState
 
-################# DO NOT EDIT BELOW THIS LINE ##################
 
 # This helpful function prompts the user for a guess,
 # accepting only single letters.
@@ -69,6 +70,7 @@ def userGuess():
 
    return guess
 
+################# DO NOT EDIT BELOW THIS LINE ##################
 
 # A helpful function to print the hangman.
 # DO NOT CHANGE
