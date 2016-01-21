@@ -3,7 +3,7 @@
 
 from random import randint
 
-words = ["test"]
+words = ["corgi","Ichi", "whiteboard"]
 numWrong = 0
 listedWord = [None]
 
@@ -30,7 +30,15 @@ def hangperson():
 
    # Start the game! Loop until the user either wins or loses
    while currentState != listedWord and numWrong < 6:
-      pass
+
+      # First, ask the user to guess
+      guess = userGuess()
+
+      # See if the guess is in the word, update accordingly
+      currentState = updateState(guess, currentState)
+
+      printHangperson(currentState)
+
 
    # Determine if the user won or lost, and then tell them accordingly
 
@@ -50,23 +58,42 @@ def updateState(guess, currentState):
    numInWord = listedWord.count(guess)
 
    # If it isn't, tell the user and update the numWrong var
+   if numInWord == 0:
+
+      numWrong = numWrong + 1
+      # numWrong += 1
+
    # If it is, congratulate them and update the state of the game.
    #    To update the state, make sure to replace ALL the '_' with
-   #    the guessed letter.
-   
+   #    the guessed letter. 
+   elif numInWord > 0:
+
+      # While we still have letters to find, keep looping
+      numFound = 0
+      index = 0
+      while numFound < numInWord and index < len(listedWord):
+         # See if letter is in word at index
+         if listedWord[index] == guess:
+            currentState[index] = guess
+            numFound = numFound + 1
+
+         index += 1 
 
    return currentState
 
 
 # This helpful function prompts the user for a guess,
 # accepting only single letters.
-# DO NOT CHANGE
 #
 # returns a letter
 def userGuess():
    guess = input("Guess a letter in the word! (Say 'exit' to stop playing) ")
    while len(guess) != 1:
-       pass
+       # User has given us too long of a response
+       # Check if it is 'exit', then exit if it is
+
+       # Otherwise, ask them to guess again
+
 
    return guess
 

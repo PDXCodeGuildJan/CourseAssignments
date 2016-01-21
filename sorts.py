@@ -48,7 +48,6 @@ def insertion_sort(the_list):
    return the_list
 
 # Call main to sort the things
-main()
-
-
+if __name__ == "__main__":
+   main()
 
