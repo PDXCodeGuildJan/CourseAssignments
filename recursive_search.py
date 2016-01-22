@@ -15,7 +15,8 @@ def main():
    print("I found", target_value, "It's at", target_index)
 
 def binary_search(sorted_list, target_value, start, end):
-   """Implements the Binary Search algorithm."""   
+   """Implements the Binary Search algorithm."""  
+    
    # Search for the target value
    print("Start:", start, "End:", end)
 
