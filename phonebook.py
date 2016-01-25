@@ -9,6 +9,9 @@ phonebook = {}
 
 def main():
    """The main driver function of our Phonebook."""
+
+   # Load any existing data into phonebook
+   load_phonebook()
    
    print("Welcome to the BEST Phonebook ever.")
 
@@ -62,11 +65,17 @@ def add_contact(name, phonenumber):
    phonebook[scrubbed_name] = formated_num
    print("New Contact:", scrubbed_name, "was added with number", formated_num, "\n")
 
+   # Save updated phonebook
+   save_phonebook()
+
 def delete_contact(name):
    """Removes the given contact from the Phonebook."""
    if name in phonebook:
       del phonebook[name]
       print(name, "was removed from the Phonebook.\n")
+
+      # Save updated phonebook
+      save_phonebook()
 
    else: 
       print("That contact already does not exist.\n")
@@ -90,8 +99,6 @@ def search_by_number(search_number):
    if result == "":
       print("Sorry, no contact has that number.\n")
 
-
-
 def print_phonebook():
    """Prints every contact in the Phonebook in a pretty way."""
 
@@ -100,12 +107,31 @@ def print_phonebook():
    for name in phonebook:
       print(name, ":\t", phonebook[name], "\n")
 
+def save_phonebook():
+   """Save the contents of the phonebook to a file."""
+
+   open_file = open("phonebook.txt", "w")
+   open_file.write(str(phonebook))
+   open_file.close()
 
 
+def load_phonebook():
+   """Load the phonebook data from the save file."""
+   global phonebook
 
+   # Open the file in write mode first, to create it if it doesn't already exist
+   load_file = open("phonebook.txt", "a")
+   load_file.close()
 
+   # Now open the file to actually read from it
+   load_file = open("phonebook.txt", "r")
+   phonebook_data = load_file.read()
+   load_file.close()
 
-
+   # If phonebook data has any data, load it into the dictionary
+   if phonebook_data:
+      # Convert from string back to dictionary
+      phonebook = eval(phonebook_data)
 
 
 
