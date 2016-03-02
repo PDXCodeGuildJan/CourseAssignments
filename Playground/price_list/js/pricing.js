@@ -164,6 +164,9 @@ function displayInventory() {
 
    };
 
+   jsonProducts = JSON.stringify(products);
+   console.log(jsonProducts);
+
 }
 
 
