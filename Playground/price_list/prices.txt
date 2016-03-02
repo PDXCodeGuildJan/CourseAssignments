@@ -1,0 +1,1 @@
+[{"prodName":"pine","price":"10","inStock":true},{"prodName":"hay","price":"5","inStock":false},{"prodName":"nails","price":"1","inStock":true},{"prodName":"screws","price":"2","inStock":true},{"prodName":"power drill","price":"50","inStock":true}]

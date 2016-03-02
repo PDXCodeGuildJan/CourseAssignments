@@ -11,6 +11,8 @@ removeStockButton.onclick = removeStock;
 
 document.getElementById("del-item").addEventListener('click', deleteItem);
 
+window.onload = loadData;
+
 // Initialize the global variable that stores the inventory.
 var products = [];
 
@@ -181,6 +183,21 @@ function Product(name, price, inStock) {
    }
 }
 
+
+function loadData() {
+   var xmlhttp = new XMLHttpRequest();
+   var url = "prices.txt";
+
+   xmlhttp.onreadystatechange = function() {
+   if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+       var temp = JSON.parse(xmlhttp.responseText);
+       console.log(temp);
+       }
+   };
+
+   xmlhttp.open("GET", url, true);
+   xmlhttp.send();
+}
 
 
 
