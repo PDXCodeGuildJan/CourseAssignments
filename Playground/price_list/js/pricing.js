@@ -185,39 +185,39 @@ function Product(name, price, inStock) {
    }
 }
 
+/**
+ * Saves current state of the products array.
+ **/
 function saveData() {
-   // Save the products in local storage
-   jsonProducts = JSON.stringify(products);
-   localStorage.setItem('priceList', jsonProducts);
+   // Transform the products array into a JSON string
+   var productJSON = JSON.stringify(products);
 
+   // Save that JSON string to local storage
+   localStorage.setItem("price_list", productJSON);
 }
 
+/**
+ * Loads the current state of the products array.
+ */
 function loadData() {
-   products = JSON.parse(localStorage.getItem('priceList'));
+   // Load the data from local storage
+   var productJSON = localStorage.getItem("price_list");
+   console.log("Loaded data", productJSON);
+
+   // Parse it into a Javascript data type and 
+   // save to the global array
+   products = JSON.parse(productJSON);
    console.log(products);
 
+   // Double check that products is set to a list if null
    if (!products) {
       products = [];
-      return;
    }
 
+   // Update the rendered display
    displayInventory();
-   // var xmlhttp = new XMLHttpRequest();
-   // var url = "prices.txt";
 
-   // xmlhttp.onreadystatechange = function() {
-   // if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-   //     var temp = JSON.parse(xmlhttp.responseText);
-   //     console.log(temp);
-   //     products = temp;
-   //     displayInventory();
-   //     }
-   // };
-
-   // xmlhttp.open("GET", url, true);
-   // xmlhttp.send();
 }
-
 
 
 
