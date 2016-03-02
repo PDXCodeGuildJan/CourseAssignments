@@ -1,0 +1,25 @@
+body {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    border: solid 1px #333;
+}
+
+h1 {
+    background-color: #F59581;
+    padding: 35px;
+    margin: 0 auto auto;
+}
+
+.false {
+    background-color: #c00;
+    color: #fff;
+}
+
+.true {
+    background-color: #0c0;
+}
