@@ -198,8 +198,10 @@ function loadData() {
 
    if (!products) {
       products = [];
+      return;
    }
 
+   displayInventory();
    // var xmlhttp = new XMLHttpRequest();
    // var url = "prices.txt";
 
