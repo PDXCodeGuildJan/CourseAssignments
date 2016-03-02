@@ -35,6 +35,8 @@ function addStock() {
 
    };
 
+   saveData();
+
 }
 
 function removeStock() {
@@ -52,6 +54,8 @@ function removeStock() {
       products[prodId].inStock = false;
 
    };
+
+   saveData();
 
 }
 
@@ -166,10 +170,7 @@ function displayInventory() {
 
    };
 
-   // Save the products in local storage
-   jsonProducts = JSON.stringify(products);
-   localStorage.setItem('priceList', jsonProducts);
-
+   saveData();
 }
 
 
@@ -184,6 +185,12 @@ function Product(name, price, inStock) {
    }
 }
 
+function saveData() {
+   // Save the products in local storage
+   jsonProducts = JSON.stringify(products);
+   localStorage.setItem('priceList', jsonProducts);
+
+}
 
 function loadData() {
    products = JSON.parse(localStorage.getItem('priceList'));
