@@ -194,6 +194,7 @@ function saveData() {
 
 function loadData() {
    products = JSON.parse(localStorage.getItem('priceList'));
+   console.log(products);
 
    if (!products) {
       products = [];
