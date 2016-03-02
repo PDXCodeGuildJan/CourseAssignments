@@ -195,6 +195,10 @@ function saveData() {
 function loadData() {
    products = JSON.parse(localStorage.getItem('priceList'));
 
+   if (!products) {
+      products = [];
+   }
+
    // var xmlhttp = new XMLHttpRequest();
    // var url = "prices.txt";
 
