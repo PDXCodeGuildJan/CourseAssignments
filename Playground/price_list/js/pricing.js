@@ -193,6 +193,7 @@ function loadData() {
        var temp = JSON.parse(xmlhttp.responseText);
        console.log(temp);
        products = temp;
+       displayInventory();
        }
    };
 
