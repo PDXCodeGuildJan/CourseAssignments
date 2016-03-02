@@ -8,8 +8,8 @@ window.onload = function(){
 //load quote
 function loadquote(){
 	var xmlhttp = new XMLHttpRequest();
-	var url = "http://54.68.253.162/StudentWork/api-3.0.json";
-	//var url = "http://www.twitter.com/somerandomapi.json";
+	//var url = "http://54.68.253.162/StudentWork/api-3.0.json";
+	var url = "http://www.twitter.com/somerandomapi.json";
 
 	//state change check.
 	xmlhttp.onreadystatechange = function() {
