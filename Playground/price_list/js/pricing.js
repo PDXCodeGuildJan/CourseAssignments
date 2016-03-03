@@ -11,7 +11,7 @@ removeStockButton.onclick = removeStock;
 
 document.getElementById("del-item").addEventListener('click', deleteItem);
 
-window.onload = loadData;
+window.onload = loadDataWithAJAX;
 
 // Initialize the global variable that stores the inventory.
 var products = [];
@@ -203,7 +203,7 @@ function saveData() {
  */
 function loadData() {
    // Load the data from local storage
-   // var productJSON = localStorage.getItem("price_list");
+   var productJSON = localStorage.getItem("price_list");
    // console.log("Loaded data", productJSON);
 
    // Parse it into a Javascript data type and 
@@ -221,6 +221,28 @@ function loadData() {
 
 }
 
+/**
+ * Load the data from the json file on the server with AJAX.
+ **/
+function loadDataWithAJAX() {
+
+   // Create a new XMLHttpRequest object
+   var request = new XMLHttpRequest();
+
+   // Add the call info
+   request.open('GET', 'data.json', true);
+
+   // Setup the onload function
+   request.onload = function () {
+      // Make sure that everything is good with the callback
+      if (request.status === 200) {
+         console.log(request.responseText);
+      }
+   }
+
+   // Actually send out the request!
+   request.send();
+}
 
 
 

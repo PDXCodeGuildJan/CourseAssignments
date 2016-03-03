@@ -1,0 +1,27 @@
+[
+  {
+    "prodName": "corgi",
+    "price": "10",
+    "inStock": false
+  },
+  {
+    "prodName": "abby",
+    "price": "30",
+    "inStock": false
+  },
+  {
+    "prodName": "pine",
+    "price": "20",
+    "inStock": false
+  },
+  {
+    "prodName": "hay",
+    "price": "20",
+    "inStock": true
+  },
+  {
+    "prodName": "hamster",
+    "price": "5",
+    "inStock": true
+  }
+]
